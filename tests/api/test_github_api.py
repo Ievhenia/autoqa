@@ -1,5 +1,4 @@
 import pytest
-from modules.api.clients.github import GitHub
 
 
 @pytest.mark.api
@@ -15,7 +14,7 @@ def test_user_not_exists(github_api):
 @pytest.mark.api
 def test_repo_can_be_found(github_api):
     r = github_api.search_repo('become-qa-auto')
-    assert r['total_count'] == 27
+    assert r['total_count'] == 29
     assert 'become-qa-auto' in r['items'] [0] ['name']
 
 @pytest.mark.api
